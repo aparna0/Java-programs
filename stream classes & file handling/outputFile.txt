@@ -1,0 +1,4 @@
+interface owner {
+void acquire(int);
+void dispose(int);
+}

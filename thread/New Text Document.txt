@@ -1,0 +1,28 @@
+// creating Thread and assigning priority
+
+class NewThraed extens Thread {
+String name;
+int ptr;
+newThread(String str, int pr) throws InterrupedException{
+     super(str);
+     Thread.setPriority(pr);
+     name = str;
+     ptr = pr;
+     Thread.start();
+}
+public void run()  throws InterrupedException{
+     System.out.println("name : "+name +" priority : "+ ptr);
+}
+}
+
+public class ThreadPriority {
+public static void main(String args[]) {
+    try {
+         Thread.currentThread.setPriority(Thread.MAX_PRIORITY);
+         new NewThread("new thread1",Thread.MIN_PRIORITY);   
+         new NewThread("new thread1",Thread.NORM_PRIORITY);
+
+    }
+    catch(InterrupedException e) {}
+}
+}

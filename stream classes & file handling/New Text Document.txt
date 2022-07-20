@@ -1,0 +1,2 @@
+// Read a string(lines of texts) from console using a BuferredReader readLine() method .
+// Program reads the lines of text and display text until user enter "stop";

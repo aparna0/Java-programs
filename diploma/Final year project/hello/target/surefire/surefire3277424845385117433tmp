@@ -1,0 +1,26 @@
+#surefire
+#Sat Mar 16 07:43:35 IST 2019
+testClassesDirectory=C\:\\Users\\Pranjali\\Downloads\\hello\\target\\test-classes
+classPathUrl.4=C\:\\Users\\Pranjali\\.m2\\repository\\edu\\cmu\\sphinx\\sphinx4-data\\5prealpha-SNAPSHOT\\sphinx4-data-5prealpha-SNAPSHOT.jar
+forkMode=once
+classPathUrl.3=C\:\\Users\\Pranjali\\.m2\\repository\\org\\apache\\commons\\commons-math3\\3.2\\commons-math3-3.2.jar
+classPathUrl.2=C\:\\Users\\Pranjali\\.m2\\repository\\edu\\cmu\\sphinx\\sphinx4-core\\5prealpha-SNAPSHOT\\sphinx4-core-5prealpha-SNAPSHOT.jar
+useManifestOnlyJar=true
+classPathUrl.1=C\:\\Users\\Pranjali\\Downloads\\hello\\target\\classes
+reportsDirectory=C\:\\Users\\Pranjali\\Downloads\\hello\\target\\surefire-reports
+classPathUrl.0=C\:\\Users\\Pranjali\\Downloads\\hello\\target\\test-classes
+providerConfiguration=org.apache.maven.surefire.junit.JUnit3Provider
+testSuiteDefinitionTestSourceDirectory=C\:\\Users\\Pranjali\\Downloads\\hello\\src\\test\\java
+surefireClassPathUrl.1=C\:\\Users\\Pranjali\\.m2\\repository\\org\\apache\\maven\\surefire\\surefire-api\\2.10\\surefire-api-2.10.jar
+surefireClassPathUrl.0=C\:\\Users\\Pranjali\\.m2\\repository\\org\\apache\\maven\\surefire\\surefire-junit3\\2.10\\surefire-junit3-2.10.jar
+runOrder=filesystem
+useSystemClassLoader=true
+excludes0=**/*$*
+isTrimStackTrace=true
+enableAssertions=true
+includes2=**/*TestCase.java
+failIfNoTests=false
+includes1=**/*Test.java
+includes0=**/Test*.java
+childDelegation=false
+classPathUrl.5=C\:\\Users\\Pranjali\\.m2\\repository\\org\\swinglabs\\swing-layout\\1.0.3\\swing-layout-1.0.3.jar
