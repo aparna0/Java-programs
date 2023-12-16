@@ -1,16 +1,36 @@
+- The Enum in Java is a data type which contains a fixed set of constants.
+- Members of enum are by default final, static and private.
+- Enum is by default final, so it can't extended.
+- Enum can be traversed
+- Enum can have fields, constructors and methods
+- Enum can have getter methods (We can write setter methods, but is not a good practice because enum members are constons, ther is no sence of writing setters)
+- Enum improves type safety.
+- Enum can be easily used in switch.
+- Enum may implement many interfaces but cannot extend any class because it internally extends Enum class.
+- Enum can't instantiated explicitly.
+
+
+
+
 public class Main {
     enum gender{
-        male, female, other;
+        male, female, other, notSpecific;
+        gender(){
+            System.out.println("Enum can have memthods and constructor");
+        }
         public gender getGender(){
             return other;
         }
     }
     public static void main(String[] args) {
-        System.out.println(gender.male);
-        gender gn = gender.female;
+        System.out.println("1");
+        System.out.println(gender.male);            //here it will call constructor for 4 times to instatiate 4 members of enum
+        gender gn = gender.male;
         System.out.println(gn);
         System.out.println(gn.getGender());
         System.out.println(gn);
+        gn = gender.valueOf("male");
+        for(gender g : gender.values());
     }
 }
 
@@ -19,10 +39,15 @@ public class Main {
 
 
 
-
-
 //output:
+1
+Enum can have memthods and constructor
+Enum can have memthods and constructor
+Enum can have memthods and constructor
+Enum can have memthods and constructor
 male
-female
+male
 other
-female
+male
+
+Process finished with exit code 0
