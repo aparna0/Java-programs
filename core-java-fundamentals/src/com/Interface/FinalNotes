@@ -3,5 +3,31 @@
 -All methods are implicitly public abstract.
 -All variable are implicitly constants( final & static).
 -We can create rference variable but can't instatiated( We can create object by implementing all objects using anonymous class)
--
+-if implementing class does not define all methods then define class as abstract
+-interface can be extended
+-if both implementing interfaces have same method then define only once in implementing class
+-Interface can define inside another interface and class
+-Inside the Interface, constructors are not allowed.
+-Inside the interface main method is not allowed.
+
+*Function Interface: 
+	functional interface is interface with only one method
+
+*Marker Interface:
+  It is empty interface which does not have any methods and variables.
+  It is used to indicate or to add some sepcific characteristics to implementing claa.
+  Exmaples: 
+    1.Clonable Interface: whichever class implements clonable interface then class is eligible for clone() method.
+    2.Serializable Interface: It makes implemeting class eligible for serializable.
+
+*New feartures in Java 8: supports default and static methods.
+*New Feature in Java 9: Supports private methods.
+
+* Why to use Interface:
+  1.To provide common behaviour.
+  2.provide list of services.
+  3.To get behaviour which is not provide in parent.
+  4.to achive multiple inheritance.
+  5.To hide business logic 
+  5.to achive decoupling, if client code changes then business code not change and vise-versa.
 
