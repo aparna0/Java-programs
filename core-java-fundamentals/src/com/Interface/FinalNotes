@@ -31,10 +31,13 @@
   5.To hide business logic 
   5.to achive decoupling, if client code changes then business code not change and vise-versa.
 
-* WHat is the use of default methods in interface:
+* What is the use of default methods in interface:
 	suppose multiple classes depends on interface and using ing and implementing the interface after that 
 	due to business requirement needed to add some more method in interface then it will crash the entire code 
 	or need to implement new method in all implementung class.
+
+What is the use of static methods:
+	to avoid method overiding.
 
 * What is the use of extending interface:
 	1.to define own abstract and default methods.
