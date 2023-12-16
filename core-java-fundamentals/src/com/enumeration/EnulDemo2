@@ -1,0 +1,28 @@
+public class Main {
+    enum gender{
+        male, female, other;
+        public gender getGender(){
+            return other;
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println(gender.male);
+        gender gn = gender.female;
+        System.out.println(gn);
+        System.out.println(gn.getGender());
+        System.out.println(gn);
+    }
+}
+
+
+
+
+
+
+
+
+//output:
+male
+female
+other
+female
