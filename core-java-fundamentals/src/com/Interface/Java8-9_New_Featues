@@ -1,0 +1,31 @@
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
+
+interface InterfaceDemo{
+    int interfameMember = 10;           //by default public static final
+    void show1();                        // by default public abstract
+
+    default void defaultMethod(){           //default method introduced from java 8
+        System.out.println("This is default method");
+    }
+
+    static void staticMethod(){         //from java 8, interface can have static method
+        System.out.println("this is static method");
+    }
+
+    private void privateMethod(){       //from java 9, interface can have private methods
+        System.out.println("Private method");
+    }
+
+}
+
+class implementedClass implements InterfaceDemo{
+    public void show1(){
+        System.out.println("Implemented abstract method of Interface");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+      // InterfaceDemo obj = new InterfaceDemo();   can't instatiated
+    }
+}
