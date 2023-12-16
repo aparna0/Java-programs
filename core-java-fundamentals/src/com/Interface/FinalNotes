@@ -1,1 +1,7 @@
+-An Interface in Java programming language is defined as an abstract type used to specify the behavior of a class. 
+-An interface in Java is a blueprint of a behavior.
+-All methods are implicitly public abstract.
+-All variable are implicitly constants( final & static).
+-We can create rference variable but can't instatiated( We can create object by implementing all objects using anonymous class)
+-
 
