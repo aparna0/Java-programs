@@ -1,14 +1,17 @@
 -An Interface in Java programming language is defined as an abstract type used to specify the behavior of a class. 
 -An interface in Java is a blueprint of a behavior.
 -All methods are implicitly public abstract.
--All variable are implicitly constants( final & static).
+-All variable are implicitly constants( public, final & static).
 -We can create rference variable but can't instatiated( We can create object by implementing all objects using anonymous class)
 -if implementing class does not define all methods then define class as abstract
--interface can be extended
 -if both implementing interfaces have same method then define only once in implementing class
 -Interface can define inside another interface and class
 -Inside the Interface, constructors are not allowed.
 -Inside the interface main method is not allowed.
+-interface can be extended
+
+*New feartures in Java 8: supports default and static methods.
+*New Feature in Java 9: Supports private methods.
 
 *Function Interface: 
 	functional interface is interface with only one method
@@ -20,9 +23,6 @@
     1.Clonable Interface: whichever class implements clonable interface then class is eligible for clone() method.
     2.Serializable Interface: It makes implemeting class eligible for serializable.
 
-*New feartures in Java 8: supports default and static methods.
-*New Feature in Java 9: Supports private methods.
-
 * Why to use Interface:
   1.To provide common behaviour.
   2.provide list of services.
@@ -30,4 +30,23 @@
   4.to achive multiple inheritance.
   5.To hide business logic 
   5.to achive decoupling, if client code changes then business code not change and vise-versa.
+
+* WHat is the use of default methods in interface:
+	suppose multiple classes depends on interface and using ing and implementing the interface after that 
+	due to business requirement needed to add some more method in interface then it will crash the entire code 
+	or need to implement new method in all implementung class.
+
+* What is the use of extending interface:
+	1.to define own abstract and default methods.
+	2.to redefine default methods from supe class
+	3.to redefine default methods as abstract method in child interface.
+	4.to redefine abstract method as a default method.
+
+* Why variables in the interface are public, static and final:
+	because interface are not instatiated ther thire variable should be static and final.
+	anything in body of interface should be accessible to implementing class
+	therefore variables are public.
+
+
+
 
