@@ -3,7 +3,7 @@ package com.casting;
 public class ImplicitTypeCast {
 
 	/*implicit type cast is done when,
-		1)dothe datatype campatable to each other
+		1)Both datatype campatable to each other
 		2)destination type size shold be greater than source type size
 	*/	
 	public static void main(String[] args) {
