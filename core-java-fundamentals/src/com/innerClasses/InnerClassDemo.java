@@ -1,3 +1,9 @@
+-Inner can access outer class members directly without outer class object.
+-Outer class can't access Inner class members directly but can only access by using inner class object (as usual)
+-Inner class can be static and accessible to outer class by class name (as usual).
+-we can't access inner class members through outer class object
+-inner class object can't access outer class members outside a outer class
+
 package com.innerClasses;
 
 class Outer{
