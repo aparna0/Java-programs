@@ -1,0 +1,19 @@
+-In the project most of time, in some of the classes we don't wright anu business code or client code, we just write variables,
+ constructor, gettres and setters like POJO classes. To define such classes we can use Records.
+, introduced in java 14.
+-Record is one special type of class with clear syntax to define immutable data only classes.
+-Compiler automatically generates constructors, getters and serilized methods such as toString(), hashCode() and equals()
+-No need of setters, beacuse it contains immutable members.
+-We can achive same feature using lombok, but Lombok requires annotating classes with special annotations that tell its annotation 
+processor to generate the desired bytecode at compile time. It works for generation of all 
+the components now supported using Java records
+
+record Employee(String empID, String name, double salary){}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee emp = new Employee("mangaap", "Aparna", 2000000);
+        System.out.println(emp);
+        System.out.println("Employee salary : " + emp.salary());
+    }
+}
