@@ -2,12 +2,15 @@
  constructor, gettres and setters like POJO classes. To define such classes we can use Records.
 , introduced in java 14.
 -Record is one special type of class with clear syntax to define immutable data only classes.
+--------------------------------------------------------------------------------------------
 -Compiler automatically generates constructors, getters and serilized methods such as toString(), hashCode() and equals()
--No need of setters, beacuse it contains immutable members.
+-No need of setters, beacuse it contains immutable members(beacuse members are final).
+------------------------------------------------------------------------------------
 -We can achive same feature using lombok, but Lombok requires annotating classes with special annotations that tell its annotation 
 processor to generate the desired bytecode at compile time. It works for generation of all 
 the components now supported using Java records
 
+=============================================================================================================================
 record Employee(String empID, String name, double salary){}
 
 public class Main {
@@ -15,5 +18,37 @@ public class Main {
         Employee emp = new Employee("mangaap", "Aparna", 2000000);
         System.out.println(emp);
         System.out.println("Employee salary : " + emp.salary());
+    }
+}
+===========================================================================================================================
+
+-We can write our won constructor, getters and methods inside record class.
+==========================================================================
+record Employee(String empID, String name, double salary){
+    public Employee(String empId){
+        this(empId, null, 0.0);
+        //this.empID = empId;
+    }
+
+    public void setSalary(double salary){
+        //this.salary = salary;         // can't assign because members are final.
+    }
+
+    public double getSalary(){          // we can write getters
+        return this.salary();
+    }
+
+    public void show(){
+        System.out.println(this.empID+ this.name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee emp = new Employee("mangaap", "Aparna", 2000000);
+        System.out.println(emp);
+        System.out.println("Employee salary : " + emp.salary());
+        Employee emp2 = new Employee("aapi");
+        emp2.show();
     }
 }
