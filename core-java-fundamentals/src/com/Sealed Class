@@ -1,0 +1,28 @@
+- It allows to seal a class to prevent it from being extended, except for a few subclasses declared using the permits keyword.
+- Feature of java 17.
+- Sealed class must have subclasses defined.
+- Sub classes are expected to be sealed, non-sealed, or final.
+==============================================================================================================================
+
+sealed class Employee permits HR, Manager{
+    Employee(){
+        System.out.println("Employee constructor");
+    }
+}
+final class HR extends Employee{
+    HR(){
+        super();
+        System.out.println("HR constructor");
+    }
+}
+non-sealed class Manager extends Employee{
+    Manager(){
+        super();
+        System.out.println("Manager constructor");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+
+    }
+}
