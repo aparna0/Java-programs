@@ -92,9 +92,7 @@ public class ArrayListDemo {
 		Collections.sort(l);
 		
 		//using for-each
-		for(String i : l) {
-			System.out.println(i);
-		}
+		l.forEach(i -> System.out.println(i));
 		l = s.subList(2, 5);	//sub list
 		Collections.sort(l);
 		
