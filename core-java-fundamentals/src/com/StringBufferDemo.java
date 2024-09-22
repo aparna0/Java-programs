@@ -32,6 +32,16 @@ public class StringBufferDemo {
 		System.out.println("Str5 : "+str5+" and capacity : "+str5.capacity());
 		str5.append(" this is demo");
 		System.out.println("Str5 : "+str5+" and capacity : "+str5.capacity());
+
+		StringBuffer str1 = new StringBuffer("abc");
+	        StringBuffer str2 = new StringBuffer("abc");
+	
+	        System.out.println("str1: "+str1);
+	        System.out.println("str2: "+str2);
+	
+	        System.out.println("is str1 equals to str2? "+str1.equals(str2));	//false
+	        System.out.println("is str1 == str2? "+ (str1==str2));			//fakse
+		
 		/*
 		str3.append(" CM");
 		System.out.println("str3 is "+str3+" and capacity is "+str3.capacity());
