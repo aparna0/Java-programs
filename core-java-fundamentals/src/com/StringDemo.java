@@ -33,5 +33,40 @@ System.out.println("is str1 and str2 equal ?  "+str1.equals(str2));
 System.out.println("str1 :"+str1.hashCode()+"\nstr2 :"+str2.hashCode());
 System.out.println(String);
 System.out.println(str2.hashCode()+" = "+(str2.toUpperCase()).hashCode());
+
+//        Str1 : aparna
+//        str2 : aparna
+//        str3 : aparna
+//        str4 : APARNA
+//        str1 :-1411502509
+//        str2 :-1411502509
+//        str3 :-1411502509
+//        str4 :1936794195
+//        char at index 2a
+//        is str1 and str2 equal ?  true
+//        is str1 and str3 equal ?  true
+//        is str1 and str4 equal ? :false
+//        equals of string ignoring the case :true
+//        compare 2 str : 32
+//        check presence of letters :true
+//        subString :arna
+//        substring :ap
+//        index of perticular char a : 0
+//        last index of perticular char : 5
+//        check wether string is empty or not : false
+//        replace a with $ : $p$rn$
+//        length : 6
+//        to upper case : APARNA
+//        to lower  : aparna
+//        Str1 : aparna
+//        str2 : aparna
+//        str3 : aparna
+//        str4 : APARNA
+//        is str1 and str2 equal ?  false
+//        str1 :1936794195
+//        str2 :-1411502509
+//        abc
+//                -1411502509 = 1936794195
+
 }
 }
