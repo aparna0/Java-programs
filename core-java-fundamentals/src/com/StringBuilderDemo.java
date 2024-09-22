@@ -17,5 +17,10 @@ public class StringBuilderDemo {
 		str3.append("umashree");
 		System.out.println("str3 : "+str3+" and capacity is "+str3.capacity());
 	}
+// capacity : 16
+// str : aparna chakrapani mangalaram and capacity is 34
+// str2 : abc and capacity is 19
+// str3 :  and capacity is 3
+// str3 : umashree and capacity is 8
 
 }
