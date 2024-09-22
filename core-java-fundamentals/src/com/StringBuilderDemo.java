@@ -16,6 +16,16 @@ public class StringBuilderDemo {
 		
 		str3.append("umashree");
 		System.out.println("str3 : "+str3+" and capacity is "+str3.capacity());
+
+		StringBuilder str1 = new StringBuilder("abc");
+	        StringBuilder str2 = new StringBuilder("abc");
+	
+	        System.out.println("str1: "+str1);
+	        System.out.println("str2: "+str2);
+	
+	        System.out.println("is str1 equals to str2? "+str1.equals(str2));	//false
+	        System.out.println("is str1 == str2? "+ (str1==str2));			//false
+
 	}
 // capacity : 16
 // str : aparna chakrapani mangalaram and capacity is 34
