@@ -1,0 +1,68 @@
+public class StringDifference {
+    public static void main(String args[]){
+
+//------------------ diff between String literal and String object--------------------
+        //String literal creates single object in String Constant Pool but string by new keyword creates 2 objects.
+        //one in SCP and another in heap. reference in heap is created by JVM
+        //String objects in SCP are not applicable for Garbage Collection because of internal dependency maintained by JVM
+        //later version of java 1.6, SCP is present in Heap memory.
+        String str1 = "aparna";
+        String str2 = "aparna";
+        String str3 = new String("aparna");
+        String str4 = new String("aparna");
+
+        //==    - compare reference
+        System.out.println(str1 == str2);
+        System.out.println(str3 == str4);
+        System.out.println(str1 == str4);
+
+//        true
+//        false
+//        false
+// -----------------------------diff between String, StringBUffer and StringBUilder----------------------------------------------------------
+
+        //String is immutable. StringBuffer and StringBuilder are mutable
+        StringBuffer sb = new StringBuffer("aparna");
+        StringBuilder sbd = new StringBuilder("aparna");
+
+        str1.concat(" mangalaram");
+        sb.append(" mangalaram");
+        sbd.append(" mangalaram");
+
+        System.out.println(str1);
+        System.out.println(sb);
+        System.out.println(sbd);
+
+//        aparna
+//        aparna mangalaram
+//        aparna mangalaram
+
+        //String class overrides equals() method of Object class but StringBuffer and StringBuilder are not
+        //Therefore equals method in String compares content but StringBuffer and StringBuilder compares reference.
+        //equals - compare content in String class
+        System.out.println(str1.equals(str2));
+        System.out.println(str3.equals(str4));
+        System.out.println(str2.equals(str3));
+
+//        true
+//        true
+//        true
+// ---------------------------------------------------------------------------------------
+        //Why Strings are immutable but StringBuffer and StringBuilder are mutable ?
+            //because Strings are stored in SCP and more than one references refers same object in SCP
+            //If we change value of any String object then it will reflect to other referring objects also
+            //If you want to change value of String, then it will create new object and points string reference to newly created object
+
+// ---------------------------------------------------------------------------------------
+        //Why String Constant Pool is only for String ?
+            //because String is mostly and commonly used datatype
+
+// ---------------------------------------------------------------------------------------
+        //Like String, is there any other datatype in java which are immutable?
+            //All wrapper classes are immutable
+
+// ---------------------------------------------------------------------------------------
+        //Why wrapper classes are immutable ?
+            //easy to provide clone/cory, caching
+    }
+}
