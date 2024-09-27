@@ -1,5 +1,10 @@
 package com;
 
+//CharSequence:
+//CharSequence is interace in the java which has method- lenght(), charAt(), chars() - returns IntStream, codePointer() - return IntStram, subSequence() and toString()
+//implemeting classes are CharBuffer, Segment, String, StringBuffer, StringBuilder
+
+
 import java.lang.String;
 public class StringDemo {
 public static void main(String args[]) {
@@ -33,6 +38,7 @@ System.out.println("is str1 and str2 equal ?  "+str1.equals(str2));
 System.out.println("str1 :"+str1.hashCode()+"\nstr2 :"+str2.hashCode());
 System.out.println(String);
 System.out.println(str2.hashCode()+" = "+(str2.toUpperCase()).hashCode());
+
 
 // Str1 : aparna
 // str2 : aparna
