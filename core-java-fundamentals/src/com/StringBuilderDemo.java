@@ -1,5 +1,6 @@
 package com;
-
+// StringBuilder is same as a StringBuffer but it is not a thread safe( not synchronized)
+// All StringBuffer methods are also present in StringBuilder class
 public class StringBuilderDemo {
 
 	public static void main(String[] args) {
