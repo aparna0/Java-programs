@@ -1,0 +1,64 @@
+public class TypeConversion {
+    public static void main(String[] args){
+
+        //--------------------------- int to x --------------------------------
+        int i = 65;
+        //int to char
+        System.out.println((char) i);   //A
+        //int to string
+        System.out.println(Integer.toString(i));    //65
+        //int to float
+        float f = i;
+        System.out.println(f);  //65.0
+        //int to double
+        double d = i;
+        System.out.println(d);  //65.0
+
+        //--------------------------- float to x -------------------------------
+        f = 65.5f;
+        //float -> int
+        System.out.println((int) f);    //65
+        //float -> double
+        d = f;
+        System.out.println(d);  //65.5
+        //float -> char
+        System.out.println((char) f);   //A
+        //float -> string
+        System.out.println(Float.toString(f));  //65.5
+
+        //--------------------------- double to x -------------------------------
+        d = 65.5;
+        // double -> int
+        System.out.println((int) d);    //65
+        //double -> float
+        System.out.println((float)d);  //65.5
+        //double -> char
+        System.out.println((char) d);   //A
+        //double -> string
+        System.out.println(Double.toString(f));  //65.5
+
+        //--------------------------- char to x ----------------------------------
+        char ch = 'a';
+        //char to int
+        System.out.println(Integer.valueOf(ch));    //97
+        //char to float
+        System.out.println(Float.valueOf(ch));  //97.0
+        //char to double
+        System.out.println(Double.valueOf(ch)); //97.0
+        //char to string
+        System.out.println(String.valueOf(ch));  // a
+
+        //--------------------------- string to x -------------------------------
+        //String value should be numeric to convert into int, float and double
+        String str = "3";
+        //string to int
+        System.out.println(Integer.valueOf(str));    //3
+        //string to float
+        System.out.println(Float.valueOf(str));  //3.0
+        //string to double
+        System.out.println(Double.valueOf(str)); //3.0
+        //string to char
+
+        System.out.println(str.charAt(0));  // 3
+    }
+}
