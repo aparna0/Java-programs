@@ -1,0 +1,38 @@
+package bigDecimal;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.function.Supplier;
+
+//optional<T> :
+//It is a feature introduced in java 8 to deal with null pointer exception
+//It is container of object of type T which may or may contain NUll value
+//get() method return value if isPresent() method returns true and if it returns false then it will call
+//orElse() which returns default predefined value
+
+public class OptionalDemo {
+    static Map<Integer, String> m = new HashMap<>();
+
+    static {
+        m.put(1, "one");
+        m.put(2, "two");
+        m.put(3, "three");
+    }
+
+    public static String returnVal(int i){
+        return m.get(i);
+    }
+
+    public static String returnValWithOptional(int i){
+        Optional<String> ret = Optional.ofNullable(m.get(i));
+        return ret.orElse("sorry");
+    }
+
+    public static void main(String args[]){
+        System.out.println(returnVal(1).toUpperCase()); //it will print value in upper case as key 1 is resent
+//        System.out.println(returnVal(6).toUpperCase());   returns NullPointerException
+        //Solution can be use of Optional<T>
+        System.out.println(returnValWithOptional(6).toUpperCase());
+    }
+}
