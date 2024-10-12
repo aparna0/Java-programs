@@ -1,0 +1,176 @@
+package bigDecimal;
+
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
+
+//BigDecimal:
+// this feature is provided in java 8
+// The BigDecimal class provides operation for arithmetic, comparison, hashing, rounding, manipulation and format conversion.
+// This method can handle very small and very big floating point numbers with great precision
+
+//In java, BigDecimal consists of a random precision integer scale and a 32-bit integer scale.
+//If positive or zero, the scale is the number of digits to the right of the decimal point.
+//If less than zero, the unscaled value of the number is multiplied by ten to the power of the negation of the scale(10^(-scale)).
+public class BasicBigDecimal {
+
+    public static void main(String args[]){
+
+        BigDecimal bd1 = new BigDecimal(10);    //int to BigDecimal
+        BigDecimal bd2 = new BigDecimal(-10);   //int to BigDecimal
+        BigDecimal bd3 = new BigDecimal(10.5f); //float to BigDecimal
+        BigDecimal bd4 = new BigDecimal(20.57); //double to BigDecimal
+        BigDecimal bd5 = new BigDecimal("765.76");  //String having decimal value to BigDecimal
+        //BigDecimal bd6 = new BigDecimal("hru765"); //NumberFormatException
+
+        //Extracting value
+        System.out.println(bd1.intValue());     //10
+        System.out.println(bd2.intValueExact());    //-10
+        //System.out.println(bd3.intValueExact());  //java.lang.ArithmeticException: Rounding necessary
+        System.out.println(new BigDecimal(10.5).intValue());    //10
+        System.out.println(bd2.floatValue());           //-10.0
+        System.out.println(bd1.doubleValue());          //10.0
+        System.out.println(bd1);             //10
+        System.out.println(bd1.byteValue());            //10
+        System.out.println(bd1.byteValueExact());       //10
+
+
+        //valueOf(): to convert double to BigDecimal
+        //may through NumberFormatException
+        double d1 = 364.4785;
+        BigDecimal bd6 = bd1.valueOf(d1);
+        float f1 = 6467.567f;
+        bd6 = bd1.valueOf(f1);
+        //System.out.println(new BigDecimal(10.5).intValueExact());
+        //ArithmeticException – if this has a nonzero fractional part, or will not fit in an int.
+
+
+        // max and min
+        System.out.println(bd1.min(bd2));       //-10
+        System.out.println(bd1.max(bd2));       //10
+
+        System.out.println(new BigDecimal("10.155").scale());   //3
+        System.out.println(new BigDecimal("-10.155").scale());  //3
+
+        System.out.println(new BigDecimal("-10.155").abs());    //10.155
+
+        //arithmetic operations
+        System.out.println(new BigDecimal("19.679").add(new BigDecimal("9.8754")));             //29.5544
+        System.out.println(new BigDecimal("19.679").subtract(new BigDecimal("9.8754")));        //9.8036
+        System.out.println(new BigDecimal("19.679").multiply(new BigDecimal("9.8754")));        //194.3379966
+        System.out.println(new BigDecimal("18").pow(2));                                        //324
+        System.out.println(bd1.compareTo(bd2));                                                 //1
+        System.out.println(bd2.compareTo(bd1));                                                 //-1
+        System.out.println(bd1.compareTo(bd2.abs()));                                           //0
+        System.out.println(bd1.negate().compareTo(bd2));                                        //0
+
+        System.out.println(new BigDecimal("18").divide(new BigDecimal("9")));   //2
+        //java.lang.ArithmeticException: Non-terminating decimal expansion; no exact representable decimal result.
+        //System.out.println(new BigDecimal("18").divide(new BigDecimal("9.5")));
+        //System.out.println(new BigDecimal("18.1").divide(new BigDecimal("9")));
+        System.out.println(new BigDecimal("18").remainder(new BigDecimal("9")));    //0
+        System.out.println(new BigDecimal("18").remainder(new BigDecimal("9.5")));  //8.5
+        for(BigDecimal bd: (new BigDecimal("19").divideAndRemainder(new BigDecimal("9")))){
+            System.out.println(bd);
+        }
+        //2
+        //1
+        //only divide integer value
+        System.out.println(new BigDecimal("18.5").divideToIntegralValue(new BigDecimal("9")));  //2.0
+
+
+        BigDecimal bd = new BigDecimal("15676576.7898");
+        System.out.println(bd.movePointLeft(2));     //156765.767898
+        System.out.println(bd.movePointLeft(-2));    //1567657678.98
+        System.out.println(bd.movePointRight(2));    //1567657678.98
+        System.out.println(bd.movePointRight(-2));   //156765.767898
+
+        System.out.println(new BigDecimal("35.675000").stripTrailingZeros());       //35.675
+        MathContext mc = new MathContext(4);  //to decide precision
+        System.out.println(new BigDecimal("35.675000").round(mc));      //35.78
+
+       //-------------------------------- Rounding Modes------------------------------
+//        59/4 => 14.75
+
+        //RoundingMode.UP
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4), RoundingMode.UP));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), RoundingMode.UP));
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4), 1, RoundingMode.UP));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), 1, RoundingMode.UP));
+        //output:
+        //15
+        //-14
+        //14.8
+        //-14.8
+
+        //RoundingMode.DOWN
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4), RoundingMode.DOWN));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), RoundingMode.DOWN));
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4), 1, RoundingMode.DOWN));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), 1, RoundingMode.DOWN));
+        //output:
+        //14
+        //-14
+        //14.7
+        //-14.7
+
+        //RoundingMode.CEILING -
+            //If no is positive then round up
+            //If no is negative then round down
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4), RoundingMode.CEILING));
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4),1,  RoundingMode.CEILING));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), RoundingMode.CEILING));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), 1, RoundingMode.CEILING));
+        //output:
+        //15
+        //14.8
+        //-14
+        //-14.7
+
+        //RoundingMode.FLOOR
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4), RoundingMode.FLOOR));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), RoundingMode.FLOOR));
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4),1, RoundingMode.FLOOR));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4),1, RoundingMode.FLOOR));
+        //output:
+        //14
+        //-15
+        //14.7
+        //-14.8
+        //negative value gets increase for floor
+
+        //RoundingMode.HALF_UP
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4), RoundingMode.HALF_UP));
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4),1,  RoundingMode.HALF_UP));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), RoundingMode.HALF_UP));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), 1, RoundingMode.HALF_UP));
+        //output:
+        //15
+        //14.8
+        //-15
+        //-14.8
+
+        //RoundingMode.HALF_DOWN
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4), RoundingMode.HALF_DOWN));
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4),1,  RoundingMode.HALF_DOWN));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), RoundingMode.HALF_DOWN));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), 1, RoundingMode.HALF_DOWN));
+        //output:
+        //14
+        //14.7
+        //-15
+        //-14.7
+
+        //RoundingMode.HALF_EVEN
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4), RoundingMode.HALF_EVEN));
+        System.out.println(new BigDecimal("59").divide(new BigDecimal(4),1,  RoundingMode.HALF_EVEN));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), RoundingMode.HALF_EVEN));
+        System.out.println(new BigDecimal("-59").divide(new BigDecimal(4), 1, RoundingMode.HALF_EVEN));
+        //output:
+        //15
+        //14.8
+        //-15
+        //-14.8
+
+    }
+}
