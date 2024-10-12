@@ -1,0 +1,192 @@
+package patterns;
+
+public class Patther1 {
+    public static void main(String args[]){
+//        1)---------------------------------------------------------------------
+//        *
+//        * *
+//        * * *
+
+        int n = 6;
+        for(int i=0; i<n; i++){
+            for(int j=0; j<=i; j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+//        2)---------------------------------------------------------------------
+//        * * *
+//        * *
+//        *
+        for(int i=0; i<n; i++){
+            for(int j=n; j>i; j--){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+//        3)---------------------------------------------------------------------
+//             *
+//           * * *
+//         * * * * *
+        int cnt=0;
+        for(int i=1; i<=n; i++){
+            for(int s=n; s>i; s--){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=i+cnt; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+            cnt++;
+        }
+        System.out.println();
+
+//        4)---------------------------------------------------------------------
+//        * * * * *
+//          * * *
+//            *
+        cnt=n-1;
+        for(int i=n; i>=1; i--){
+            for(int s=n; s>i; s--){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=i+cnt; j++){
+                System.out.print("*");
+            }
+            cnt--;
+            System.out.println();
+        }
+        System.out.println();
+
+//        5)---------------------------------------------------------------------
+//        A
+//        A B
+//        A B C
+        int ch = 65;
+        for(int i=1; i<=n; i++){
+            for(int j=0; j<i; j++){
+                System.out.print((char)(ch+j)+ " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
+//      6)---------------------------------------------------------------------
+        //             1
+        //           1 2 1
+        //         1 2 3 2 1
+        cnt=0;
+        for(int i=1; i<=n; i++){
+            int k=1;
+            for(int s=n; s>i; s--){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=i+cnt; j++){
+                if(j<i)    System.out.print(k++);
+                else        System.out.print(k--);
+            }
+            cnt++;
+            System.out.println();
+        }
+        System.out.println();
+
+//        7)---------------------------------------------------------------------
+//        1 2 3 2 1
+//          1 2 1
+//            1
+//
+        cnt=n-1;
+       for(int i=n; i>=1; i--){
+           int k=1;
+          for(int s=n; s>i; s--){
+              System.out.print(" ");
+          }
+          for(int j=1; j<=i+cnt; j++){
+              if(j<i)   System.out.print(k++);
+              else      System.out.print(k--);
+          }
+           cnt--;
+           System.out.println();
+       }
+       System.out.println();
+
+//      8)---------------------------------------------------------------------
+//         *    *
+//        ***  ***
+//       **********
+        cnt=0;
+        int sCnt = n*2-2;
+        for(int i=1; i<=n; i++){
+            for(int s=n; s>i; s--){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=i+cnt; j++){
+                System.out.print("*");
+            }
+            for(int s=sCnt; s>=1; s--){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=i+cnt; j++){
+                System.out.print("*");
+            }
+            cnt++;
+            sCnt-=2;
+            System.out.println();
+        }
+        System.out.println();
+
+//        9)---------------------------------------------------------------------
+//        **********
+//         ***  ***
+//          *    *
+
+        cnt = n-1;
+        sCnt = 0;
+        for(int i=n; i>=1; i--){
+            for(int s=n; s>i; s--){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=i+cnt; j++){
+                System.out.print("*");
+            }
+            for(int s=1; s<=sCnt; s++){
+                System.out.print(" ");
+            }
+            for(int j=1; j<=i+cnt; j++){
+                System.out.print("*");
+            }
+            cnt--;
+            sCnt += 2;
+            System.out.println();
+        }
+        System.out.println();
+
+//        10)----------------Pascal Triangle-----------------------------------------------------
+//                  1
+//                1   1
+//              1   2   1
+//            1   3   3   1
+//          1   4   6   4   1
+//        1   5  10  10   5   1
+       int k=1;
+       for (int i=0; i<n; i++){
+           for(int s=n-1; s>i; s--){
+               System.out.print("  ");
+           }
+           for(int j=0; j<=i; j++){
+               if(i==0 || j==0){
+                   k = 1;
+               }
+               else{
+                   k = k * (i-j+1) / j;
+               }
+               System.out.printf("%4d",k);
+           }
+           System.out.println();
+       }
+    }
+}
