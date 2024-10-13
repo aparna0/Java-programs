@@ -12,6 +12,10 @@ package org.StreamAPI;
 //     nums.forEach( n- System.out.println(n));
 //     - forEach method is part of a list interface, that gives one value at a time and then you can perform operations on it.
 
+// diff between Collection and stream:
+//  Collections are used to store and group the data in a particular data structure like List, Set, or Map.
+//  Whereas Streams are used to perform complex data processing operations like filtering, matching, mapping, etc 
+//  on stored data such as arrays, collections, or I/O resources. That means, collections are mainly about data and streams are mainly about operations on data.
 
 import java.util.Comparator;
 import java.util.List;
