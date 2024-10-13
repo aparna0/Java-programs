@@ -51,6 +51,23 @@ public class StreamAPI {
             }
         });
         s4.forEach(s ->System.out.println(s));
+
+        Comparator<Integer> com = new Comparator<>(){
+          @Override
+          public int compare(Integer o1, Integer o2) {
+              if(o1 > o2) return 1;
+              else return -1;
+          }
+      };
+      //get max & min value
+      int maxValue = lst.stream().max(com).get();
+      System.out.println("Max value from list is "+ maxValue);
+      System.out.println("Min value from list is "+ lst.stream().min(com).get());
+
+      //get distinct values from list
+      List<Integer> distValues = lst.stream().distinct().collect(Collectors.toList());
+      distValues.forEach( n -> System.out.print(n+" "));
+        
     }
 }
 
@@ -74,3 +91,6 @@ public class StreamAPI {
 //        8
 //        6
 //        4
+//        Max value from list is 6
+//        Min value from list is 1
+//        1 2 3 4 5 6 
