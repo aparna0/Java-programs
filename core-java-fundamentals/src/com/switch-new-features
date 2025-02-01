@@ -1,0 +1,35 @@
+//brawbacks of old switch:
+  1. doesn't support multiple values to switch case
+  2. default fall down through default( break statement is compulsory to breake case then it will execute further cases also)
+
+//new features in java 13
+  1. allows case multiple values.
+  2. switch can we used as a expression, i.e we can pass input value and switch will process it and retunr output value.
+  3. either :yield or -> is used to return value from switch case and no need to write break statement.
+  4. when you writing switch case as a expression, it is mandatory give semicolon and write default case.
+  5. after -> we can write {}, throw exeption and statement/ expression
+
+  import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+        int n = 1;
+        String out = switch(n){
+            case 1,2: yield "first case";
+            default : yield "default case";
+        };
+        System.out.println(out);
+
+        out = switch(n){
+            case 1,2 -> "first case";
+            case 3 -> "second case";
+            default -> "default case";
+        };
+        System.out.println(out);
+
+	}
+}
