@@ -17,19 +17,65 @@ class Codechef
 {
 	public static void main (String[] args) throws java.lang.Exception
 	{
-        int n = 1;
-        String out = switch(n){
-            case 1,2: yield "first case";
-            default : yield "default case";
+       		 int ch =1;
+        
+        //old - single value in case and default fall down if no break is written
+        switch(ch){
+            case 1:
+                System.out.println("one");
+                break;
+            case 2: System.out.println("two");
+        }
+        
+        //---------------------------- new ----------------------------
+        
+        //multiple values in single case
+         switch(ch){
+            case 1,2:
+                System.out.println("one");
+                break;
+            case 3: System.out.println("two");
+        }
+        
+         switch("ruchita"){
+            case "aparna","ruchita":
+                System.out.println("employed");
+                break;
+            case "shreya": System.out.println("Unemployed");
+        }
+        
+        //use -> to avoid break 
+        switch(ch){
+            case 1,2 ->System.out.println("one");
+            case 3 -> System.out.println("two"); 
+        }
+        
+        //use -> to write switch as a expression
+        //; and default is compulsory for switch expression
+        String out =  switch(ch){
+             case 1,2 -> "one";
+            case 3 -> "two";
+            default -> throw new IllegalArgumentException();
         };
         System.out.println(out);
-
-        out = switch(n){
-            case 1,2 -> "first case";
-            case 3 -> "second case";
-            default -> "default case";
+        
+        //use yield to return value in old switch case
+        out =  switch(ch){
+             case 1,2: yield "one";
+            case 3: yield "two";
+            default: throw new IllegalArgumentException();
         };
         System.out.println(out);
-
+        
+        //use yield to return value in -> block with multiple statement
+        out =  switch(ch){
+             case 1,2 ->{
+                 System.out.println("this is block case");
+                 yield "one";
+             }
+             case 3 -> "two";
+            default-> throw new IllegalArgumentException();
+        };
+        System.out.println(out);
 	}
 }
