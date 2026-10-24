@@ -26,4 +26,6 @@ public class UpcastingDemo {
 							 //parent all members and child overriden methods is accessible
 	}
 
+	// P is reference of parent class but holding child class object, therefore it access only parent class members
+	// but an method of parent class is overriden then it will call overriden ethod from child class
 }
