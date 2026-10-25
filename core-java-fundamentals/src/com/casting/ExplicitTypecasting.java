@@ -3,6 +3,7 @@ package com.casting;
 public class ExplicitTypecasting {
 	
 	//we can perform explicit type cast by explicitly writting type in brackets
+	//Also called as Narrowing casting 
 	public static void main(String[] args) {
 		
 		//int a = (int) "1"; not applicable
